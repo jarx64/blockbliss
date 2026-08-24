@@ -1,13 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://7p2ehmwmivvg"]
+[gd_scene format=3 uid="uid://7p2ehmwmivvg"]
 
-[ext_resource type="Script" uid="uid://yw6vh652n2y4" path="res://features/game_flow/game_overlay.gd" id="1_ie4jc"]
-[ext_resource type="Script" uid="uid://dg7lbr1wkxxsn" path="res://features/scores/score_box.gd" id="2_r2eog"]
+[ext_resource type="Script" uid="uid://y2drvriv80bd" path="res://features/game_flow/GameOverlay.cs" id="1_lidsh"]
+[ext_resource type="Script" uid="uid://d0vhx6dfi6g0r" path="res://features/scores/ScoreBox.cs" id="2_lidsh"]
 [ext_resource type="Theme" uid="uid://cl1waixbnwnmx" path="res://features/ui/theme.tres" id="2_sfd0e"]
-[ext_resource type="Script" uid="uid://bgink1id4gwi4" path="res://features/shapes/next_piece_renderer.gd" id="6_nx175"]
+[ext_resource type="Script" uid="uid://w2uebgi2tylr" path="res://features/shapes/NextPieceRenderer.cs" id="4_lqw6l"]
 [ext_resource type="Texture2D" uid="uid://cymtjfhxish04" path="res://features/grid/art/blank.png" id="7_lhcu8"]
 [ext_resource type="Texture2D" uid="uid://bspu17ato11n3" path="res://features/grid/art/block.png" id="8_cpe4y"]
 
-[node name="overlay" type="Control" node_paths=PackedStringArray("score_box", "next_piece_renderer")]
+[node name="overlay" type="Control" unique_id=1709691822 node_paths=PackedStringArray("ScoreBox", "NextPieceRenderer")]
 z_index = 1
 layout_mode = 3
 anchors_preset = 15
@@ -17,11 +17,11 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_ie4jc")
-score_box = NodePath("right_bar/score_box")
-next_piece_renderer = NodePath("right_bar/next_piece")
+script = ExtResource("1_lidsh")
+ScoreBox = NodePath("right_bar/score_box")
+NextPieceRenderer = NodePath("right_bar/next_piece")
 
-[node name="right_bar" type="VBoxContainer" parent="."]
+[node name="right_bar" type="VBoxContainer" parent="." unique_id=145251274]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -30,45 +30,45 @@ offset_left = -166.0
 offset_bottom = 55.0
 grow_horizontal = 0
 
-[node name="score_box" type="PanelContainer" parent="right_bar" node_paths=PackedStringArray("score_display_label")]
+[node name="score_box" type="PanelContainer" parent="right_bar" unique_id=580101204 node_paths=PackedStringArray("ScoreDisplayLabel")]
 layout_mode = 2
-script = ExtResource("2_r2eog")
-score_display_label = NodePath("layout_margin/layout_h/score")
+script = ExtResource("2_lidsh")
+ScoreDisplayLabel = NodePath("layout_margin/layout_h/score")
 
-[node name="layout_margin" type="MarginContainer" parent="right_bar/score_box"]
+[node name="layout_margin" type="MarginContainer" parent="right_bar/score_box" unique_id=378861718]
 custom_minimum_size = Vector2(0.72, 0)
 layout_mode = 2
 theme = ExtResource("2_sfd0e")
 
-[node name="layout_h" type="HBoxContainer" parent="right_bar/score_box/layout_margin"]
+[node name="layout_h" type="HBoxContainer" parent="right_bar/score_box/layout_margin" unique_id=1327137430]
 layout_mode = 2
 
-[node name="label" type="Label" parent="right_bar/score_box/layout_margin/layout_h"]
+[node name="label" type="Label" parent="right_bar/score_box/layout_margin/layout_h" unique_id=424205937]
 layout_mode = 2
 text = "SCORE:"
 
-[node name="score" type="Label" parent="right_bar/score_box/layout_margin/layout_h"]
+[node name="score" type="Label" parent="right_bar/score_box/layout_margin/layout_h" unique_id=1125468870]
 layout_mode = 2
 text = "00000000"
 
-[node name="next_piece" type="PanelContainer" parent="right_bar" node_paths=PackedStringArray("piece_frame")]
+[node name="next_piece" type="PanelContainer" parent="right_bar" unique_id=675964667 node_paths=PackedStringArray("PieceFrame")]
 layout_mode = 2
-script = ExtResource("6_nx175")
-piece_frame = NodePath("layout_margin/layout_v/sprite_frame")
-empty_cell_sprite = ExtResource("7_lhcu8")
-tile_sprite = ExtResource("8_cpe4y")
+script = ExtResource("4_lqw6l")
+PieceFrame = NodePath("layout_margin/layout_v/sprite_frame")
+EmptyCellSprite = ExtResource("7_lhcu8")
+TileSprite = ExtResource("8_cpe4y")
 
-[node name="layout_margin" type="MarginContainer" parent="right_bar/next_piece"]
+[node name="layout_margin" type="MarginContainer" parent="right_bar/next_piece" unique_id=1607213258]
 layout_mode = 2
 theme = ExtResource("2_sfd0e")
 
-[node name="layout_v" type="VBoxContainer" parent="right_bar/next_piece/layout_margin"]
+[node name="layout_v" type="VBoxContainer" parent="right_bar/next_piece/layout_margin" unique_id=1082967412]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="right_bar/next_piece/layout_margin/layout_v"]
+[node name="Label" type="Label" parent="right_bar/next_piece/layout_margin/layout_v" unique_id=1979781331]
 layout_mode = 2
 text = "NEXT PIECE"
 
-[node name="sprite_frame" type="PanelContainer" parent="right_bar/next_piece/layout_margin/layout_v"]
+[node name="sprite_frame" type="PanelContainer" parent="right_bar/next_piece/layout_margin/layout_v" unique_id=1228620356]
 custom_minimum_size = Vector2(128, 156)
 layout_mode = 2

@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://1e8upbix8tdr"]
+[gd_scene format=3 uid="uid://1e8upbix8tdr"]
 
-[ext_resource type="Script" uid="uid://k2g8har1n8t" path="res://features/shapes/shape_library.gd" id="1_vqj0q"]
-[ext_resource type="Script" uid="uid://ciat0m1hxwvsa" path="res://features/shapes/shape_resource.gd" id="2_g7ukk"]
+[ext_resource type="Script" uid="uid://bml0w03l8exeh" path="res://features/shapes/ShapeLibrary.cs" id="1_cj1ju"]
+[ext_resource type="Script" uid="uid://cj3bmsfatfnq" path="res://features/shapes/ShapeResource.cs" id="2_gginx"]
 [ext_resource type="Resource" uid="uid://diqr1iwl1qyeb" path="res://features/shapes/content/long.tres" id="3_ingjt"]
 [ext_resource type="Resource" uid="uid://xumrblpioele" path="res://features/shapes/content/left_l.tres" id="3_x56pv"]
 [ext_resource type="Resource" uid="uid://dmckkxc2f2r37" path="res://features/shapes/content/left_zig.tres" id="4_b6nfl"]
@@ -10,6 +10,6 @@
 [ext_resource type="Resource" uid="uid://dx43b3mxnleus" path="res://features/shapes/content/right_zig.tres" id="7_7l224"]
 [ext_resource type="Resource" uid="uid://x7cata8fpfpy" path="res://features/shapes/content/triangle.tres" id="9_ofnkh"]
 
-[node name="shape_library" type="Node"]
-script = ExtResource("1_vqj0q")
-shapes = Array[ExtResource("2_g7ukk")]([ExtResource("3_x56pv"), ExtResource("4_b6nfl"), ExtResource("3_ingjt"), ExtResource("6_kixj3"), ExtResource("7_7l224"), ExtResource("4_x07xo"), ExtResource("9_ofnkh")])
+[node name="shape_library" type="Node" unique_id=1679948065]
+script = ExtResource("1_cj1ju")
+Shapes = Array[ExtResource("2_gginx")]([ExtResource("3_x56pv"), ExtResource("4_b6nfl"), ExtResource("3_ingjt"), ExtResource("6_kixj3"), ExtResource("7_7l224"), ExtResource("4_x07xo"), ExtResource("9_ofnkh")])

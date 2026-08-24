@@ -1,12 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://fln2psd1yjh1"]
+[gd_scene format=3 uid="uid://fln2psd1yjh1"]
 
-[ext_resource type="Script" uid="uid://cs86v4vy71j0c" path="res://features/game_flow/root_context.gd" id="1_xab57"]
+[ext_resource type="Script" uid="uid://bunqfi8y8f66j" path="res://features/game_flow/RootContext.cs" id="1_xab57"]
 [ext_resource type="PackedScene" uid="uid://btjlhieh2wt34" path="res://features/menu/menu_scene.tscn" id="2_4i6oa"]
 [ext_resource type="PackedScene" uid="uid://hc6wha2iupp6" path="res://features/game_flow/game_scene.tscn" id="3_21i1o"]
 [ext_resource type="PackedScene" uid="uid://c30yg8exb6yq5" path="res://features/music/music.tscn" id="4_1e2wt"]
 [ext_resource type="PackedScene" uid="uid://pkei7ttufln5" path="res://features/sfx/sfx.tscn" id="5_0ht6x"]
 [ext_resource type="Texture2D" uid="uid://bw20pblal0v44" path="res://features/grid/art/white.png" id="6_uyog5"]
-[ext_resource type="Script" uid="uid://78gb00n8ion5" path="res://features/vfx/backdrop.gd" id="7_e7fp3"]
+[ext_resource type="Script" uid="uid://balp1kna0btbn" path="res://features/vfx/Backdrop.cs" id="7_xab57"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lnu2h"]
 resource_local_to_scene = true
@@ -19,24 +19,24 @@ scale_max = 10.42
 turbulence_enabled = true
 turbulence_noise_strength = 2.25
 
-[node name="game" type="Node2D"]
+[node name="game" type="Node2D" unique_id=891363653]
 script = ExtResource("1_xab57")
-menu_scene_packed = ExtResource("2_4i6oa")
-game_scene_packed = ExtResource("3_21i1o")
-music_player_packed = ExtResource("4_1e2wt")
-sfx_player_packed = ExtResource("5_0ht6x")
+MenuScenePacked = ExtResource("2_4i6oa")
+GameScenePacked = ExtResource("3_21i1o")
+MusicPlayerPacked = ExtResource("4_1e2wt")
+SfxPlayerPacked = ExtResource("5_0ht6x")
 
-[node name="backdrop" type="Sprite2D" parent="."]
+[node name="backdrop" type="Sprite2D" parent="." unique_id=1877622908]
 modulate = Color(0.0745098, 0.054902, 0.0980392, 1)
 position = Vector2(574.02, 322.375)
 scale = Vector2(35.9988, 20.2266)
 texture = ExtResource("6_uyog5")
-script = ExtResource("7_e7fp3")
-colors = Array[Color]([Color(0.447438, 0.199888, 0.220396, 1), Color(0.570319, 0.577735, 0.181183, 1), Color(0.0731653, 0.347076, 0.509744, 1), Color(0.154876, 0.154876, 0.154876, 1)])
-transition_time = 30.0
-transition_time_fudge = 5.0
+script = ExtResource("7_xab57")
+Colors = Array[Color]([Color(0.44705883, 0.2, 0.21960784, 1), Color(0.5686275, 0.5764706, 0.18039216, 1), Color(0.07450981, 0.34901962, 0.50980395, 1), Color(0.15294118, 0.15294118, 0.15294118, 1)])
+TransitionTime = 30.0
+TransitionTimeFudge = 5.0
 
-[node name="background_particle" type="GPUParticles2D" parent="."]
+[node name="background_particle" type="GPUParticles2D" parent="." unique_id=57711158]
 modulate = Color(1, 1, 1, 0.121569)
 position = Vector2(450, 650)
 amount = 200

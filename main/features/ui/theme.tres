@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=18 format=4 uid="uid://cl1waixbnwnmx"]
+[gd_resource type="Theme" format=4 uid="uid://cl1waixbnwnmx"]
 
 [ext_resource type="FontFile" uid="uid://8i27bnsam3lf" path="res://features/ui/fonts/basis33/basis33.ttf" id="1_e1x85"]
 
@@ -112,6 +112,15 @@ data = PackedByteArray("d09GMgABAAAAALU4ABEAAAABjRQAALTXAAEAAAAAAAAAAAAAAAAAAAAA
 font_name = "Open Sans SemiBold"
 style_name = "SemiBold"
 font_weight = 600
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
 cache/0/16/0/ascent = 18.0
 cache/0/16/0/descent = 5.0
 cache/0/16/0/underline_position = 1.60938

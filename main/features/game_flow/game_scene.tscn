@@ -1,25 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://hc6wha2iupp6"]
+[gd_scene format=3 uid="uid://hc6wha2iupp6"]
 
-[ext_resource type="Script" uid="uid://feoi4ko1a4xj" path="res://features/game_flow/game_context.gd" id="1_w5aja"]
+[ext_resource type="Script" uid="uid://0qkffl5vynrk" path="res://features/game_flow/GameContext.cs" id="1_a75rq"]
 [ext_resource type="PackedScene" uid="uid://1e8upbix8tdr" path="res://features/shapes/shape_library.tscn" id="2_y3j0m"]
-[ext_resource type="Script" uid="uid://d1vlp30sh7kh3" path="res://features/grid/preview_renderer.gd" id="3_bw6k5"]
 [ext_resource type="PackedScene" uid="uid://day4swvj338re" path="res://features/vfx/camera.tscn" id="3_rurhu"]
 [ext_resource type="PackedScene" uid="uid://7p2ehmwmivvg" path="res://features/game_flow/overlay_game.tscn" id="4_bw6k5"]
 [ext_resource type="PackedScene" uid="uid://damlgfwiume0l" path="res://features/grid/renderer.tscn" id="4_nrdmr"]
+[ext_resource type="Script" uid="uid://biijvgwq5jbwu" path="res://features/grid/GridRenderer.cs" id="5_ovnin"]
+[ext_resource type="Script" uid="uid://caxg0dm0c4w2d" path="res://features/grid/PreviewRenderer.cs" id="6_6a76p"]
 
-[node name="GameScene" type="Node2D" node_paths=PackedStringArray("renderer", "preview_renderer", "overlay")]
-script = ExtResource("1_w5aja")
-renderer = NodePath("renderer")
-preview_renderer = NodePath("preview_renderer")
-overlay = NodePath("CanvasLayer/overlay")
-shape_library_packed = ExtResource("2_y3j0m")
-camera_packed = ExtResource("3_rurhu")
+[node name="GameScene" type="Node2D" unique_id=52927747 node_paths=PackedStringArray("Renderer", "PreviewRenderer", "Overlay")]
+script = ExtResource("1_a75rq")
+Renderer = NodePath("renderer")
+PreviewRenderer = NodePath("preview_renderer")
+Overlay = NodePath("CanvasLayer/overlay")
+ShapeLibraryPacked = ExtResource("2_y3j0m")
+CameraPacked = ExtResource("3_rurhu")
 
-[node name="renderer" parent="." instance=ExtResource("4_nrdmr")]
+[node name="renderer" parent="." unique_id=710195916 instance=ExtResource("4_nrdmr")]
+script = ExtResource("5_ovnin")
 
-[node name="preview_renderer" type="Node2D" parent="."]
-script = ExtResource("3_bw6k5")
+[node name="preview_renderer" type="Node2D" parent="." unique_id=666525821]
+script = ExtResource("6_6a76p")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=196685911]
 
-[node name="overlay" parent="CanvasLayer" instance=ExtResource("4_bw6k5")]
+[node name="overlay" parent="CanvasLayer" unique_id=434074421 instance=ExtResource("4_bw6k5")]
